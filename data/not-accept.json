@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "title": "措辭紅線庫（評卷時常見「不接受」表述）",
+  "note": "此庫為教學歸納，用於提醒答題用語；並非任何一份評卷參考的原文。",
+  "items": [
+    { "topic": "酸與鹼", "reject": "NH3(aq) dissociates in water", "accept": "NH3(aq) ionizes / reacts with water to give OH−(aq) partially", "why": "弱鹼是與水反應生成 OH−，不是電離出本身已有的離子；用 dissociate 描述 NH3 屬概念錯誤。" },
+    { "topic": "酸與鹼", "reject": "the solution contains OH− ions（作為鹼性原因）", "accept": "Ca(OH)2 ionizes / dissolves to give OH−(aq), so [OH−] > [H+]", "why": "只講「含有 OH−」等於同義反覆，沒有解釋來源。" },
+    { "topic": "氣體測試", "reject": "NH3 is lighter than air", "accept": "NH3 is less dense than air", "why": "密度才是向上擴散／向下排空氣的原因；lighter 屬口語且被視為不精確。" },
+    { "topic": "分離方法", "reject": "evaporation（用於從溶液取回已溶解的鹽並收集水）", "accept": "distillation / fractional distillation", "why": "蒸發只取固體，不能同時收集餾液；題目要求兩者時不接受 evaporation。" },
+    { "topic": "分子間力", "reject": "intermolecular forces（在需要指明種類時）", "accept": "van der Waals forces / hydrogen bonds / dipole-dipole interactions", "why": "必須指明是哪一種分子間力，泛稱不給分。" },
+    { "topic": "化學反應速率", "reject": "HCl used is the limiting reactant（作為反應停止的原因）", "accept": "all the HCl has been consumed / used up", "why": "要描述「已耗盡」這個事實，而非只貼標籤。" },
+    { "topic": "公平測試", "reject": "keep all other conditions the same", "accept": "use the same mass of CaCO3 / same concentration and volume of HCl / same particle size", "why": "公平測試要指名控制哪一個變數，泛稱不接受。" },
+    { "topic": "配位鍵", "reject": "donate a lone pair to the 4th H atom", "accept": "donate a lone pair to H+ (a proton)", "why": "NH4+ 中的第四個粒子是 H+，不是 H 原子；粒子分類錯即不給。" },
+    { "topic": "金屬與酸", "reject": "insoluble sulphate layer forms（不指名）", "accept": "insoluble CaSO4(s) forms on the surface of Ca", "why": "必須指出是哪一種微溶／不溶硫酸鹽。" },
+    { "topic": "電解", "reject": "Na+ is discharged because Na is reactive", "accept": "H+ is discharged because its oxidizing power is stronger than that of Na+", "why": "放電次序看氧化能力／還原能力，不是單講活潑性。" },
+    { "topic": "氧化還原", "reject": "oxidation number of O in H2O2 is −2", "accept": "−1（O 與 O 相連）", "why": "H2O2 中兩個氧互相鍵合，氧化數為 −1。" },
+    { "topic": "有機化學", "reject": "esterification needs NaOH", "accept": "carboxylic acid + alcohol with concentrated H2SO4, reflux", "why": "酯化用酸催化；NaOH 會水解酯。" },
+    { "topic": "有機化學", "reject": "cis/trans isomers have different boiling points because one is polar（無比較級）", "accept": "the cis isomer is polar, so van der Waals forces between its molecules are stronger, giving a higher boiling point", "why": "比較題必須有比較級，並指明作用力的種類。" },
+    { "topic": "立體異構", "reject": "the C=C bond can rotate（用於解釋順反異構）", "accept": "rotation about the C=C bond is restricted", "why": "順反異構存在的根本原因是 C=C 不能自由旋轉，漏此點即失分。" },
+    { "topic": "聚合物", "reject": "repeating unit 內畫兩個單元", "accept": "以中括號包住單一重複單元，兩端留鍵", "why": "重複單元只應包含一個單元；畫兩個單元屬結構表達錯。" },
+    { "topic": "焓變", "reject": "ΔH = 601.8 kJ mol−1（放熱但無負號）", "accept": "ΔH = −601.8 kJ mol−1", "why": "放熱必須為負；符號錯該答案分 0。" }
+  ]
+}
