@@ -6,6 +6,7 @@
 <title>DSE 化學批改助手 · Chem Grader</title>
 <link rel="stylesheet" href="./styles.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<style>.nav{display:flex;gap:14px;font-size:13px;margin-top:14px}.nav a{color:#cfe9e4;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:2px}.nav a.on{color:#fff;border-color:#fff;font-weight:600}</style>
 </head>
 <body>
 
@@ -16,6 +17,10 @@
     <p class="lede">上載你的答卷，按考評局評卷慣例逐點給分：內容分、步驟分、有效溝通分，並列出失分位置。</p>
     <div class="chips">
       <span>逐點給分</span><span>嚴格模式</span><span>帶遞誤差</span><span>弱項歸類</span>
+    </div>
+    <div class="nav">
+      <a href="./index.html" class="on">AI 批改</a>
+      <a href="./offline.html">MC 對卷（離線·免 key）</a>
     </div>
   </div>
 </header>
@@ -117,6 +122,7 @@
       <li>批改程式本身。</li>
     </ul>
     <p>你手上的試卷／評卷參考，在批改時即時貼上或上載即可，不會被寫入倉庫。這樣你照樣可以「用 2012–2026 全部年份」練，而網站本身保持合規。</p>
+    <p class="tiny">若不想申請任何 API key：MC 可直接用 <a href="./offline.html">MC 對卷（離線）</a>，完全在你部機計分。</p>
   </section>
 
 </main>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MC 自動對卷 · 離線模式</title>
+<link rel="stylesheet" href="./styles.css" />
+<style>
+  .nav{display:flex;gap:14px;font-size:13px;margin-top:14px}
+  .nav a{color:#cfe9e4;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:2px}
+  .nav a.on{color:#fff;border-color:#fff;font-weight:600}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:700px){.row{grid-template-columns:1fr}}
+  .keybox{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+  .badge{display:inline-block;font-size:12px;padding:3px 9px;border-radius:999px;background:#e6f3f1;color:#0f766e;margin-left:8px}
+  .list{margin:0;padding-left:0;list-style:none}
+  .list li{padding:8px 10px;border-bottom:1px solid var(--line);font-size:14px}
+  .list li b{color:var(--warn)}
+  .hist{width:100%;border-collapse:collapse;font-size:13.5px}
+  .hist th,.hist td{padding:8px;border-bottom:1px solid var(--line);text-align:left}
+  .hist th{color:var(--muted);font-weight:600;font-size:12.5px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">HKDSE CHEMISTRY · 離線工具</p>
+    <h1>MC 自動對卷</h1>
+    <p class="lede">貼上標準答案同你自己的答案，即刻計分、逐題對錯、算出準確率。完全在你部機執行，不連網、不登入、不用任何 key。</p>
+    <div class="nav">
+      <a href="./index.html">AI 批改</a>
+      <a href="./offline.html" class="on">MC 對卷（離線）</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="card">
+    <h2><span class="num">1</span>填入答案</h2>
+    <p class="hint">格式很寬鬆：`1C 2B 3D`、`1 C`、`1.C`、`1:A` 都認得；也可以直接貼「1C2B3D4A」。</p>
+    <div class="row">
+      <label>標準答案（評卷參考）
+        <textarea id="key" class="keybox" rows="6" placeholder="1C 2B 3D 4A …"></textarea>
+      </label>
+      <label>我的答案
+        <textarea id="mine" class="keybox" rows="6" placeholder="1C 2B 3A 4A …"></textarea>
+      </label>
+    </div>
+    <div class="row" style="margin-top:12px">
+      <label>試卷名稱（用於存檔）
+        <input id="paper" type="text" placeholder="例如 2023 DSE Chem P1、SUPER MOCK Set 1" />
+      </label>
+      <label>MC 佔全卷百分比（可留空）
+        <input id="weight" type="text" placeholder="例如 30" />
+      </label>
+    </div>
+    <div class="actions">
+      <button id="run" class="primary">對卷</button>
+      <button id="demo" class="ghost">載入示範</button>
+      <button id="clear" class="ghost">清空</button>
+      <span id="status" class="status"></span>
+    </div>
+  </section>
+
+  <section id="result" class="card result hidden">
+    <div class="scoreband">
+      <div><p class="tiny">MC 得分</p><p id="total" class="total">–</p></div>
+      <div class="meter"><div id="bar" class="meterfill"></div></div>
+      <div class="pct"><p class="tiny">準確率</p><p id="percent" class="pctnum">–</p></div>
+    </div>
+    <div id="verdict" class="verdict"></div>
+    <h3 style="font-size:14px;color:var(--muted);margin:16px 0 4px">錯題清單</h3>
+    <ul id="wrong" class="list"></ul>
+    <p id="none" class="tiny" style="display:none">全對，無錯題。</p>
+    <div class="actions" style="margin-top:16px">
+      <button id="save" class="ghost">存入紀錄</button>
+      <button id="export" class="ghost">下載 Markdown</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="num">2</span>練習紀錄<span id="cnt" class="badge">0 次</span></h2>
+    <p class="hint">紀錄只存在你這部裝置的瀏覽器（localStorage），不上傳、不同步、其他人睇唔到。</p>
+    <table class="hist">
+      <thead><tr><th>日期</th><th>試卷</th><th>得分</th><th>準確率</th></tr></thead>
+      <tbody id="hist"></tbody>
+    </table>
+    <div class="actions" style="margin-top:12px">
+      <button id="wipe" class="ghost">清除全部紀錄</button>
+    </div>
+  </section>
+
+  <section class="card notice">
+    <h2>為什麼這一頁不需要 key</h2>
+    <p>對 MC 只係「字元比對 + 計分」，是純數學，不需要任何 AI。所以它可以 100% 在你部機跑：免費、離線、私人、零設定。</p>
+    <p>長題（LQ）的評分要判斷「呢句有冇中到給分點」，那一步才需要 AI。你可以回到 <a href="./index.html">AI 批改</a> 頁用自己嘅 key，或者直接把卷貼給我改。</p>
+  </section>
+
+</main>
+
+<footer class="foot"><div class="wrap">DSE Chem · 離線工具 · 資料留在你的瀏覽器</div></footer>
+
+<script src="./offline.js"></script>
+</body>
+</html>
